@@ -57,6 +57,11 @@ public class Player_2_Controller : MonoBehaviour
             Attack_Weapon_4();
         }
 
+
+
+        Debug.Log("" + weapon_2);
+
+
         // Reseteamos bools de input
         rotateClockwise = false;
         rotateCounterclockwise = false;
@@ -64,6 +69,8 @@ public class Player_2_Controller : MonoBehaviour
         weapon_2 = false;
         weapon_3 = false;
         weapon_4 = false;
+
+      
     }
 
     public void RotateCharacter(float direction)
