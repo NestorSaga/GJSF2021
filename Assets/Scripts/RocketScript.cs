@@ -6,7 +6,7 @@ public class RocketScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
+    
     public float speed = 5;
 
     public Vector3 dir;

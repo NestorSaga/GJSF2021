@@ -9,4 +9,5 @@ public class Weapon : MonoBehaviour
     public float cooldown;
 
     public virtual void Fire(){}
+    public virtual void Release() {}
 }

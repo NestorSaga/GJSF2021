@@ -11,6 +11,9 @@ public class Flamethrower : Weapon
     public Transform flameAnchor;
 
     public GameObject fireParticles;
+
+
+    public bool instantiated;
     void Start()
     {
         Debug.Log("Soy un lanzallamas!");
@@ -26,13 +29,26 @@ public class Flamethrower : Weapon
     {
         Debug.Log("Lanzo llamas putita.");
 
+            foreach (Transform tr in flameSpawns)
+            {
+                //tr.gameObject.SetActive(true);
+                tr.gameObject.GetComponent<BoxCollider>().enabled = true;    
+                if(!tr.gameObject.GetComponent<ParticleSystem>().isPlaying)
+                    tr.gameObject.GetComponent<ParticleSystem>().Play();
+
+            }
+        
+    }
+
+    public override void Release()
+    {
         foreach (Transform tr in flameSpawns)
         {
-            tr.GetComponent<BoxCollider>().enabled = true;
-            fireParticles = Instantiate(fireParticles, tr.transform.position,Quaternion.LookRotation(tr.transform.position - flameAnchor.transform.position, new Vector3(0,0,0)));
-            fireParticles.transform.parent = gameObject.transform;
-
+            //tr.gameObject.SetActive(false);
+            tr.gameObject.GetComponent<BoxCollider>().enabled = false;
+            tr.gameObject.GetComponent<ParticleSystem>().Stop();
+            
         }
-
     }
+
 }

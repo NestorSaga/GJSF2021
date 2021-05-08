@@ -12,12 +12,16 @@ public class RocketLauncher : Weapon
     public GameObject rocketBase;
     public GameObject rocket;
 
+    float l_duration;
+
 
 
     void Start()
     {
         Debug.Log("Soy un lanzacohetes!");
         rocket = rocketBase;
+        damage = 5;
+        l_duration = duration;
     }
 
     void Update()
@@ -29,11 +33,18 @@ public class RocketLauncher : Weapon
     public override void Fire()
     {
         Debug.Log("Lanzo cohetes putita.");
-        foreach (Transform tr in rocketSpawns)
+        l_duration -= Time.deltaTime;
+        if (l_duration < 0)
         {
-            rocket = Instantiate(rocket, tr.transform.position, tr.transform.rotation);
-            rocket.GetComponent<RocketScript>().dir = tr.transform.position - anchorPoint.transform.position;
+            foreach (Transform tr in rocketSpawns)
+            {
+                rocket = Instantiate(rocket, tr.transform.position, tr.transform.rotation);
+                rocket.GetComponent<RocketScript>().dir = tr.transform.position - anchorPoint.transform.position;
+                l_duration = duration;
+            }
+
         }
+        
     }
 
 

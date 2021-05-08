@@ -10,7 +10,7 @@ public class FlamePulse : Weapon
 
     Vector3 targetScale;
 
-    float speed = 5;
+    float speed = 0.5f;
 
     void Start()
     {
@@ -39,5 +39,10 @@ public class FlamePulse : Weapon
 
 
 
+    }
+
+    public override void Release()
+    {
+        Debug.Log("suelted");
     }
 }

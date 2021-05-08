@@ -27,16 +27,18 @@ public class PlayerController : MonoBehaviour
     Vector3 playerInput;
     bool jumpInput, attackInput;
 
+    // Valores
+    public float P1HP, maxP1HP;
+
     public void OnMove(InputAction.CallbackContext ctx) => playerInput = new Vector3(ctx.ReadValue<Vector2>().x, 0 , ctx.ReadValue<Vector2>().y);
     public void OnJump(InputAction.CallbackContext ctx) => jumpInput = ctx.ReadValueAsButton();
     public void OnAttack(InputAction.CallbackContext ctx) => attackInput = ctx.ReadValueAsButton();
     public void OnPause(InputAction.CallbackContext ctx) => Debug.Log("Pause!"); // Quiza ni lo termine haciendo el player en si...
 
-
-    public GameManager gm;
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody>();
+        P1HP = maxP1HP;
 
     }
 
@@ -112,8 +114,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.tag == "Fire")
         {
@@ -136,7 +137,12 @@ public class PlayerController : MonoBehaviour
                     break;
             }
 
-            gm.GetComponent<GameManager>().takeDamage(10, 0);
+            TakeDamage(10);
         }
+    }
+
+    public void TakeDamage(float quantity)
+    {
+        P1HP -= quantity;
     }
 }

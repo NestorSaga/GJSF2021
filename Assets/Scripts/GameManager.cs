@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-
+    public static GameManager Instance;
 
     public  List<Transform> limites;
 
@@ -21,30 +21,30 @@ public class GameManager : MonoBehaviour
     float offset = 1.5f;
 
 
-    public float maxKnightHP = 50;
-    public float currentKnightHP;
+   
 
-    public float maxBossHP = 100;
-    public float currentBossHP;
+    public PlayerController p1;
+    public Player_2_Controller p2;
 
 
-    public Slider knightSlider, bossSlider;
-
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+    }
     void Start()
     {
         limites = new List<Transform>();
         llenarLista();
-        currentBossHP = maxBossHP;
-        currentKnightHP = maxKnightHP;
-        setStartingHealth();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (currentBossHP <= 0) win();
-        else if (currentKnightHP <= 0) lose();
+        //if (currentBossHP <= 0) win();
+        //else if (currentKnightHP <= 0) lose();
 
 
 
@@ -75,20 +75,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void setStartingHealth()
-    {
-        knightSlider.maxValue = maxKnightHP;
-        knightSlider.value = maxKnightHP;
 
-        bossSlider.maxValue = maxBossHP;
-        bossSlider.value = maxBossHP;
-    }
 
-    public void takeDamage(int dmg, int id)
-    {
-        if (id == 0) knightSlider.value -= dmg;
-        else bossSlider.value -= dmg;        
-    }
+
 
 
     public void win()
