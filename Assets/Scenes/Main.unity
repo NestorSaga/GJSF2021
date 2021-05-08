@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &434346816
 Transform:
   m_ObjectHideFlags: 0
@@ -165,8 +165,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.6833646, z: 0.40233135}
-  m_Center: {x: 0, y: 0.065383315, z: -0.29883432}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &844961119
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +308,10 @@ MonoBehaviour:
   jump: {x: 0, y: 0, z: 0}
   jumpForce: 5
   isGrounded: 0
+  hittBox: {fileID: 434346815}
+  attackRange: 1
+  attackDuration: 0.2
+  damage: 5
 --- !u!54 &991628528
 Rigidbody:
   m_ObjectHideFlags: 0
