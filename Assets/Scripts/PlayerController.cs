@@ -2,34 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum Direction {UP, DOWN, LEFT, RIGHT}
+public enum State {IDLE, MOVING, ATTACKING}
 public class PlayerController : MonoBehaviour
 {
 
 
     private Rigidbody rb;
-    public float speed;
+    public float speed = 5;
 
     public Vector3 jump;
-    public float jumpForce;
+    public float jumpForce = 5;
 
     public bool isGrounded;
 
     CapsuleCollider sphereCol;
-    BoxCollider hittBox;
+    public GameObject hittBox;
+
+    Direction direction = Direction.DOWN;
+
+    State state = State.IDLE;
+
+    public float attackRange = 1;
+
+    public float attackDuration = 0.2f;
+    public float damage = 5;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         sphereCol = GetComponent<CapsuleCollider>();
-        hittBox = GetComponentInChildren<BoxCollider>();
-        hittBox.enabled = false;
+        
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        
+    }
     void FixedUpdate()
     {
-        //Basic movement
+        //Player Input
+
         Vector3 pInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        //Direction
+
+        if (Input.GetAxis("Horizontal") < 0) direction = Direction.LEFT;
+        else if (Input.GetAxis("Horizontal") > 0) direction = Direction.RIGHT;
+        else if (Input.GetAxis("Vertical") < 0) direction = Direction.DOWN;
+        else if (Input.GetAxis("Vertical") > 0) direction = Direction.UP;
+
+        //Movement
         rb.MovePosition(transform.position + pInput * Time.deltaTime * speed);
 
         //Jump
@@ -47,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         //Attack
         if (Input.GetKey(KeyCode.Mouse0))
-            Attack();
+            StartCoroutine(AttackCoroutine(attackDuration));
 
     }
 
@@ -61,10 +85,40 @@ public class PlayerController : MonoBehaviour
     private void Attack()
     {
 
+    }
+    IEnumerator AttackCoroutine(float duration)
+    {
 
-        hittBox.enabled = true;
-        //Animation
-        Debug.Log("ras");
-        hittBox.enabled = false;
+        switch (direction)
+        {
+            case Direction.UP:
+                hittBox.transform.localPosition = transform.forward * attackRange;
+                break;
+
+            case Direction.DOWN:
+                hittBox.transform.localPosition = -transform.forward * attackRange;
+                break;
+
+            case Direction.LEFT:
+                hittBox.transform.localPosition = -transform.right * attackRange;
+                break;
+
+            case Direction.RIGHT:
+                hittBox.transform.localPosition = transform.right * attackRange;
+                break;
+        }
+        hittBox.SetActive(true);
+
+        while (duration > 0)
+        {
+            duration -= Time.deltaTime;
+
+
+
+
+
+            yield return null;
+        }
+        hittBox.SetActive(false);
     }
 }
