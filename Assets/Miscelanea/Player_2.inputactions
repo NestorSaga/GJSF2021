@@ -35,7 +35,7 @@
                     "id": "416ceb95-241e-47c8-a739-b9da1f4d5e73",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press,Hold"
                 },
                 {
                     "name": "Weapon 2",
@@ -43,7 +43,7 @@
                     "id": "aa256bc9-6238-442c-83cc-c1293356f0fd",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Hold"
                 },
                 {
                     "name": "Weapon 3",

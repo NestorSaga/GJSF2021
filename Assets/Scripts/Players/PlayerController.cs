@@ -32,9 +32,12 @@ public class PlayerController : MonoBehaviour
     public void OnAttack(InputAction.CallbackContext ctx) => attackInput = ctx.ReadValueAsButton();
     public void OnPause(InputAction.CallbackContext ctx) => Debug.Log("Pause!"); // Quiza ni lo termine haciendo el player en si...
 
+
+    public GameManager gm;
     void Start()
     {
         rb = GetComponent<Rigidbody>(); 
+
     }
 
     private void Update()
@@ -105,5 +108,35 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         hitbox.SetActive(false);
+    }
+
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Fire")
+        {
+            switch (direction)
+            {
+                case Direction.UP:
+                    rb.AddForce(-transform.forward * 2000);
+                    break;
+
+                case Direction.DOWN:
+                    rb.AddForce(transform.forward * 2000);
+                    break;
+
+                case Direction.LEFT:
+                    rb.AddForce(transform.right * 2000);
+                    break;
+
+                case Direction.RIGHT:
+                    rb.AddForce(-transform.right * 2000);
+                    break;
+            }
+
+            gm.GetComponent<GameManager>().takeDamage(10, 0);
+        }
     }
 }

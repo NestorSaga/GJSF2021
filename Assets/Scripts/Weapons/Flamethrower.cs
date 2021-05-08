@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Flamethrower : Weapon
 {
+
+
+    public List<Transform> flameSpawns;
     void Start()
     {
         Debug.Log("Soy un lanzallamas!");
@@ -18,5 +21,11 @@ public class Flamethrower : Weapon
     public override void Fire()
     {
         Debug.Log("Lanzo llamas putita.");
+
+        foreach (Transform tr in flameSpawns)
+        {
+            tr.GetComponent<BoxCollider>().enabled = true;
+        }
+
     }
 }
