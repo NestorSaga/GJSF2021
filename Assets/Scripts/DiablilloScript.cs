@@ -12,7 +12,7 @@ public class DiablilloScript : MonoBehaviour
 
     void Start()
     {
-
+        SoundManager.Instance.PlaySound(SoundManager.Sound.diablilloSound);
     }
 
     // Update is called once per frame
