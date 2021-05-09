@@ -11,6 +11,8 @@ public class SkyRocket : MonoBehaviour
     void Start()
     {
         mark = transform.GetChild(0).gameObject;
+        SoundManager.Instance.PlaySound(SoundManager.Sound.player2RocketFlying);
+
     }
 
     void Update()
@@ -24,6 +26,7 @@ public class SkyRocket : MonoBehaviour
             if (transform.position.y <= 0)
             {
                 EffectsManager.Instance.InstantiateEffect("Explosion", transform.position);
+                SoundManager.Instance.PlaySound(SoundManager.Sound.player2RocketExplode);
                 Destroy(gameObject);
             }
         }

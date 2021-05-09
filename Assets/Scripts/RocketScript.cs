@@ -25,8 +25,7 @@ public class RocketScript : MonoBehaviour
     {
         if (collision.collider.tag == "Pared")
         {
-            Debug.Log("Bengalas de luz y de color");
-
+            SoundManager.Instance.PlaySound(SoundManager.Sound.player2RocketExplode);
             Destroy(this.gameObject);
         }
     }
@@ -34,8 +33,12 @@ public class RocketScript : MonoBehaviour
     {
         if (other.tag == "Pared")
         {
-            Debug.Log("Bengalas de luz y de color");
-
+            SoundManager.Instance.PlaySound(SoundManager.Sound.player2RocketExplode);
+            Destroy(this.gameObject);
+        }
+        if(other.tag == "Player")
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.player2RocketExplode);
             Destroy(this.gameObject);
         }
     }
