@@ -1062,6 +1062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2b95ebf260a304db754d5d2bab7e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoUI: {fileID: 0}
+  gameUI: {fileID: 0}
   knightSlider: {fileID: 1684284105}
   bossSlider: {fileID: 2004377397}
 --- !u!1 &878301524
@@ -8291,7 +8293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908015, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908016, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_Name
