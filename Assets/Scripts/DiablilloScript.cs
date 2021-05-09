@@ -13,15 +13,15 @@ public class DiablilloScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if(target!=null)
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-        //if (transform.position == target.position && target!=null )
+        
+        if (target != null && transform.position == target.position ) Destroy(gameObject);
     }
 }

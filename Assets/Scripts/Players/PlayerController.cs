@@ -135,25 +135,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.transform.tag == "Fire")
         {
-            switch (direction)
-            {
-                case Direction.UP:
-                    rb.AddForce(-transform.forward * 2000);
-                    break;
 
-                case Direction.DOWN:
-                    rb.AddForce(transform.forward * 2000);
-                    break;
-
-                case Direction.LEFT:
-                    rb.AddForce(transform.right * 2000);
-                    break;
-
-                case Direction.RIGHT:
-                    rb.AddForce(-transform.right * 2000);
-                    break;
-            }
-
+            addKnockback(collision.transform);
             TakeDamage(10);
         }
     }
@@ -161,5 +144,30 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float quantity)
     {
         P1HP -= quantity;
+        if (P1HP <= 0) GameManager.Instance.lose();
+    }
+
+
+
+    public void addKnockback(Transform tr)
+    {
+        switch (direction)
+        {
+            case Direction.UP:
+                rb.AddForce(-transform.forward * 2000);
+                break;
+
+            case Direction.DOWN:
+                rb.AddForce(transform.forward * 2000);
+                break;
+
+            case Direction.LEFT:
+                rb.AddForce(transform.right * 2000);
+                break;
+
+            case Direction.RIGHT:
+                rb.AddForce(-transform.right * 2000);
+                break;
+        }
     }
 }
