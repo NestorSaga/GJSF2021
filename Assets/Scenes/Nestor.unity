@@ -581,6 +581,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1667036339762502428, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
+      propertyPath: increaseRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044071168393090998, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
 --- !u!1 &728236657
@@ -1491,23 +1499,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - sound: 0
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: f35389e552655cf44abebf4d8316357f, type: 3}
   - sound: 1
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 48d9e18ddc64b284b97b9cc92303cc88, type: 3}
   - sound: 2
-    audioClip: {fileID: 8300000, guid: 1a5f6b0f2beb2284486b6f0126783c90, type: 3}
+    audioClip: {fileID: 8300000, guid: 8f222898b93742d4f9f68f78078b933d, type: 3}
   - sound: 3
-    audioClip: {fileID: 8300000, guid: 15d949b428eee614087b16d126c3dc5a, type: 3}
+    audioClip: {fileID: 8300000, guid: 91a6c756587b7dd40937d44b3d6171b7, type: 3}
   - sound: 4
     audioClip: {fileID: 8300000, guid: 5dc9ab5c0f5a6cc4e96c9f2a7c07f05b, type: 3}
   - sound: 5
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: a7733e54de2793746932b5d096a8e771, type: 3}
   - sound: 6
     audioClip: {fileID: 8300000, guid: 93c53c90295b4bc43acb763d9e22dbe6, type: 3}
   - sound: 7
     audioClip: {fileID: 8300000, guid: f33688acba7fa624fb668017c22cc7f6, type: 3}
   - sound: 8
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 8f222898b93742d4f9f68f78078b933d, type: 3}
 --- !u!4 &1031940230
 Transform:
   m_ObjectHideFlags: 0
@@ -8279,6 +8287,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908012, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811303544089908015, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908016, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}

@@ -21,16 +21,16 @@ public class Player_2_Controller : MonoBehaviour
 
     // Valores
 
-    public float P2HP, maxP2HP;
+    public float P2HP, maxP2HP, rotationSpeed;
 
     // Gestión de inputs
 
     Vector2 weaponRotation;
-    bool rotateClockwise, rotateCounterclockwise, weapon_3, weapon_4, weapon_1Cancelled, weapon_2Cancelled;
-    float weapon_2, weapon_1;
+    bool weapon_3, weapon_4, weapon_1Cancelled, weapon_2Cancelled;
+    float weapon_2, weapon_1, rotateClockwise, rotateCounterclockwise;
 
-    public void OnRotate_Clockwise(InputAction.CallbackContext ctx) => rotateClockwise = ctx.ReadValueAsButton();
-    public void OnRotate_Counterclockwise(InputAction.CallbackContext ctx) => rotateCounterclockwise = ctx.ReadValueAsButton();
+    public void OnRotate_Clockwise(InputAction.CallbackContext ctx) => rotateClockwise = ctx.ReadValue<float>();
+    public void OnRotate_Counterclockwise(InputAction.CallbackContext ctx) => rotateCounterclockwise = ctx.ReadValue<float>();
     public void OnRotateWeapon(InputAction.CallbackContext ctx) => weaponRotation = ctx.ReadValue<Vector2>();
     public void OnWeapon_1(InputAction.CallbackContext ctx) 
     {
@@ -54,11 +54,18 @@ public class Player_2_Controller : MonoBehaviour
     void Start()
     {
         P2HP = maxP2HP;
+        rotationSpeed = 40;
         //Die();
     }
 
     void Update()
     {
+
+        if (rotateClockwise > 0.1f) RotateCharacter(true);
+        else if (rotateCounterclockwise > 0.1f) RotateCharacter(false);
+
+        if (weaponRotation.x != 0) RotateWeapons(weaponRotation);
+
         if (weapon_1 > 0.1f)
         {
             Attack_Weapon_1();
@@ -82,8 +89,7 @@ public class Player_2_Controller : MonoBehaviour
         }
 
         // Reseteamos bools de input
-        rotateClockwise = false;
-        rotateCounterclockwise = false;
+
 
 
         weapon_4 = false;
@@ -91,14 +97,24 @@ public class Player_2_Controller : MonoBehaviour
       
     }
 
-    public void RotateCharacter(float direction)
+    public void RotateCharacter(bool clockwise)
     {
+
+        if(clockwise) transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        else transform.Rotate(-Vector3.up * rotationSpeed * Time.deltaTime);
+
 
     }
 
-    public void RotateWeapons(float direction)
+    public void RotateWeapons(Vector2 dir)
     {
+        foreach(Transform tr in transform)
+        {
+            if(tr.name == "Weapons"){
 
+                tr.Rotate(Vector3.up * (rotationSpeed * dir.x) * Time.deltaTime);
+            }
+        }
     }
 
     public void Attack_Weapon_1()
