@@ -45,10 +45,19 @@ public class GameManager : MonoBehaviour
         wonOnce = false;
         transform.GetComponent<AudioSource>().Play();
 
-        var uno = PlayerInput.Instantiate(p1Prefab, controlScheme: "Player_1", pairWithDevice: Gamepad.all[0]);
-        var dos = PlayerInput.Instantiate(p2Prefab, controlScheme: "Player_1", pairWithDevice: Gamepad.all[1]);
-        p1 = uno.GetComponent<PlayerController>();
-        p2 = dos.GetComponent<Player_2_Controller>();
+        Debug.Log(Gamepad.all.Count);
+
+        if(Gamepad.all.Count >= 2)
+        {
+            Destroy(p1.gameObject);
+            Destroy(p2.gameObject);
+
+            var uno = PlayerInput.Instantiate(p1Prefab, controlScheme: "Player_1", pairWithDevice: Gamepad.all[0]);
+            var dos = PlayerInput.Instantiate(p2Prefab, controlScheme: "Player_1", pairWithDevice: Gamepad.all[1]);
+
+            p1 = uno.GetComponent<PlayerController>();
+            p2 = dos.GetComponent<Player_2_Controller>();
+        }
     }
 
     // Update is called once per frame
