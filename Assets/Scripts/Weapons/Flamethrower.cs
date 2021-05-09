@@ -57,7 +57,6 @@ public class Flamethrower : Weapon
             
         }
         playedOnce = false;
-        SoundManager.Instance.audioSource.Stop();
     }
 
 }
