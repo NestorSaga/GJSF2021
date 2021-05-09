@@ -23,6 +23,12 @@ TextureImporter:
   - first:
       213: 2508950197020726048
     second: UI_Jam_6
+  - first:
+      213: -8747298068525226987
+    second: UI_Jam_7
+  - first:
+      213: -5167148143584275192
+    second: UI_Jam_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,9 +156,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 37
-        y: 944
+        y: 1011
         width: 877
-        height: 69
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +176,10 @@ TextureImporter:
       name: UI_Jam_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 887
-        width: 1255
-        height: 57
+        x: 35
+        y: 948
+        width: 881
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +197,10 @@ TextureImporter:
       name: UI_Jam_2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 797
-        width: 470
-        height: 67
+        x: 37
+        y: 884
+        width: 1249
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,9 +219,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 39
-        y: 692
-        width: 282
-        height: 84
+        y: 831
+        width: 1235
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +239,10 @@ TextureImporter:
       name: UI_Jam_4
       rect:
         serializedVersion: 2
-        x: 39
-        y: 623
-        width: 303
-        height: 69
+        x: 35
+        y: 739
+        width: 468
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +260,10 @@ TextureImporter:
       name: UI_Jam_5
       rect:
         serializedVersion: 2
-        x: 27
-        y: 73
-        width: 850
-        height: 523
+        x: 47
+        y: 657
+        width: 260
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +281,10 @@ TextureImporter:
       name: UI_Jam_6
       rect:
         serializedVersion: 2
-        x: 973
-        y: 89
-        width: 816
-        height: 505
+        x: 48
+        y: 589
+        width: 283
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,6 +294,48 @@ TextureImporter:
       bones: []
       spriteID: 023119449e491d220800000000000000
       internalID: 2508950197020726048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Jam_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 66
+        width: 832
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514e71970ca5b9680800000000000000
+      internalID: -8747298068525226987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Jam_8
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 71
+        width: 786
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80517dfd32a9a48b0800000000000000
+      internalID: -5167148143584275192
       vertices: []
       indices: 
       edges: []

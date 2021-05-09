@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public PlayerController p1;
     public Player_2_Controller p2;
 
+    bool startGame;
 
     private void Awake()
     {
@@ -33,35 +34,37 @@ public class GameManager : MonoBehaviour
     {
         limites = new List<Transform>();
         llenarLista();
-
+        startGame = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Time.time > nextActionTime)
+        if (startGame)
         {
-            //Minions objetive
-            nextActionTime += period;
-            int random = Random.Range(0, limites.Count);
-            Vector3 position = new Vector3(limites[random].position.x - offset * 2, offset, limites[random].position.z - offset * 2);
-            //Vector3 position = limites[random].forward +  new Vector3(0,offset,0);
+            if (Time.time > nextActionTime)
+            {
+                //Minions objetive
+                nextActionTime += period;
+                int random = Random.Range(0, limites.Count);
+                Vector3 position = new Vector3(limites[random].position.x - offset * 2, offset, limites[random].position.z - offset * 2);
+                //Vector3 position = limites[random].forward +  new Vector3(0,offset,0);
 
-            int offTargetPlus = limites.Count - random + 2;
-            int offTargetMinus = limites.Count - random - 2;
-            if (limites.Count - random + 2 > limites.Count-1) offTargetPlus = limites.Count;
-            else if (limites.Count - random - 2 < 0) offTargetMinus = 0;
+                int offTargetPlus = limites.Count - random + 2;
+                int offTargetMinus = limites.Count - random - 2;
+                if (limites.Count - random + 2 > limites.Count - 1) offTargetPlus = limites.Count;
+                else if (limites.Count - random - 2 < 0) offTargetMinus = 0;
 
-            //Spawn minions
-            var d = Instantiate(diablillo, position, Quaternion.identity);
+                //Spawn minions
+                var d = Instantiate(diablillo, position, Quaternion.identity);
 
 
-            if (period % 2 == 0)
-                d.GetComponent<DiablilloScript>().target = limites[offTargetPlus];
-            else
-                d.GetComponent<DiablilloScript>().target = limites[offTargetMinus];
-        }
+                if (period % 2 == 0)
+                    d.GetComponent<DiablilloScript>().target = limites[offTargetPlus];
+                else
+                    d.GetComponent<DiablilloScript>().target = limites[offTargetMinus];
+            }
+        }   
     }
 
     void llenarLista()
@@ -72,6 +75,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartGame()
+    {
+        startGame = true;
+        UIManager.Instance.infoUI.SetActive(false);
+        UIManager.Instance.gameUI.SetActive(true);
+    }
 
     public void win()
     {
