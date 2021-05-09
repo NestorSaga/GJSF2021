@@ -26,7 +26,7 @@ public class Player_2_Controller : MonoBehaviour
     // Gestión de inputs
 
     Vector2 weaponRotation;
-    bool weapon_3, weapon_4, weapon_1Cancelled, weapon_2Cancelled;
+    bool weapon_3, weapon_4, weapon_1Cancelled, weapon_2Cancelled, firstBossDown;
     float weapon_2, weapon_1, rotateClockwise, rotateCounterclockwise;
 
     public void OnRotate_Clockwise(InputAction.CallbackContext ctx) => rotateClockwise = ctx.ReadValue<float>();
@@ -156,7 +156,19 @@ public class Player_2_Controller : MonoBehaviour
     public void TakeDamage(float quantity)
     {
         P2HP -= quantity;
-        if (P2HP <= 0) GameManager.Instance.win();
+        if (P2HP <= 0)
+        {
+            
+            if(firstBossDown)
+            {
+                DieHarder();
+            }
+            P2HP = maxP2HP;
+            Die();
+            firstBossDown = true;
+
+        }
+
     }
 
     public void Die()
@@ -176,5 +188,10 @@ public class Player_2_Controller : MonoBehaviour
             }
         }
 
+    }
+
+    public void DieHarder()
+    {
+        GameManager.Instance.win();
     }
 }
