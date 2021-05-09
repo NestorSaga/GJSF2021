@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public PlayerController p1;
     public Player_2_Controller p2;
 
-    bool startGame;
+    bool startGame, wonOnce;
 
     private void Awake()
     {
@@ -87,16 +87,27 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
-        Debug.Log("WIN");
-        UIManager.Instance.EndScreen(true);
-        p1.GetComponent<PlayerInput>().enabled = false;
-        p2.GetComponent<PlayerInput>().enabled = false;
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            Application.Quit(0);
+        if (wonOnce)
+        {
+            Debug.Log("WIN");
+            UIManager.Instance.EndScreen(true);
+            p1.GetComponent<PlayerInput>().enabled = false;
+            p2.GetComponent<PlayerInput>().enabled = false;
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-            SceneManager.LoadScene(0);
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+                Application.Quit(0);
+
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+                SceneManager.LoadScene(0);
+        }
+        else
+        {
+            p2.P2HP = p2.maxP2HP;
+            wonOnce = true;
+        }
+
+        
     }
 
     public void lose()

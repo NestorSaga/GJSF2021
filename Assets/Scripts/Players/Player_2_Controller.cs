@@ -158,15 +158,8 @@ public class Player_2_Controller : MonoBehaviour
         P2HP -= quantity;
         if (P2HP <= 0)
         {
-            
-            if(firstBossDown)
-            {
-                DieHarder();
-            }
-            P2HP = maxP2HP;
             Die();
-            firstBossDown = true;
-
+            GameManager.Instance.win();
         }
 
     }
@@ -191,10 +184,5 @@ public class Player_2_Controller : MonoBehaviour
             }
         }
 
-    }
-
-    public void DieHarder()
-    {
-        GameManager.Instance.win();
     }
 }
