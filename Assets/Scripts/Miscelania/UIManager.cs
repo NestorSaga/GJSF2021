@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject infoUI;
     public GameObject gameUI;
+    public GameObject pobleWins;
+    public GameObject dimoniWins;
 
     public Image knightSlider, bossSlider;
 
@@ -29,10 +31,19 @@ public class UIManager : MonoBehaviour
         p2 = GameManager.Instance.p2;
     }
 
-    // Update is called once per frame
     void Update()
     {
         knightSlider.fillAmount = p1.P1HP/p1.maxP1HP;
         bossSlider.fillAmount = p2.P2HP/p2.maxP2HP;
+    }
+
+    void EndScreen(bool poblewins)
+    {
+        gameUI.SetActive(false);
+
+        if (poblewins)
+            pobleWins.SetActive(true);
+        
+        else dimoniWins.SetActive(true);       
     }
 }
