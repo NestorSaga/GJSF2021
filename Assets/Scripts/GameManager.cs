@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
                     diablillo.GetComponent<DiablilloScript>().target = limites[limites.Count - random + 2];
                 else
                     diablillo.GetComponent<DiablilloScript>().target = limites[limites.Count - random - 2];
-
             }
     }
 
