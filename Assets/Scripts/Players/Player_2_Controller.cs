@@ -175,15 +175,18 @@ public class Player_2_Controller : MonoBehaviour
     {
         foreach(Transform child in transform)
         {
-            if(child.name == "Garsa")
+            if(child.name == "Model")
             {
                 foreach(Transform garsaChild in child) {
-                    garsaChild.GetComponent<Rigidbody>().isKinematic = false;
-                    garsaChild.GetComponent<Rigidbody>().AddExplosionForce(3000, garsaChild.position, 5f);
 
-                    garsaChild.GetComponent<MeshCollider>().enabled = true;
+                    if (garsaChild.name == "Outline") Destroy(garsaChild.gameObject);
+                    if(garsaChild != null)
+                    {
+                        garsaChild.GetComponent<Rigidbody>().isKinematic = false;
+                        garsaChild.GetComponent<Rigidbody>().AddExplosionForce(3000, garsaChild.position, 5f);
 
-
+                        garsaChild.GetComponent<MeshCollider>().enabled = true;
+                    }
                 }
             }
         }
