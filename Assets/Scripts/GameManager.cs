@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public GameObject diablillo;
 
 
+    // Prefabs de players
+    public GameObject p1Prefab;
+    public GameObject p2Prefab;
+
     float nextActionTime = 0.0f;
     float period = 4f;
 
@@ -40,6 +44,11 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         wonOnce = false;
         transform.GetComponent<AudioSource>().Play();
+
+        var uno = PlayerInput.Instantiate(p1Prefab, controlScheme: "Player_1", pairWithDevice: Gamepad.all[0]);
+        var dos = PlayerInput.Instantiate(p2Prefab, controlScheme: "Player_1", pairWithDevice: Gamepad.all[1]);
+        p1 = uno.GetComponent<PlayerController>();
+        p2 = dos.GetComponent<Player_2_Controller>();
     }
 
     // Update is called once per frame

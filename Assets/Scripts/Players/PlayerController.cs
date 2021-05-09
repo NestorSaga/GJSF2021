@@ -31,9 +31,6 @@ public class PlayerController : MonoBehaviour
     public float P1HP, maxP1HP;
 
     // Referencias
-
-
-
     public Animator animator;
     public SoundManager sm;
 

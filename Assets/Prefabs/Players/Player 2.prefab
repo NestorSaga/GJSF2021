@@ -15397,8 +15397,8 @@ MonoBehaviour:
     weapon_3: {fileID: 1667036339186786164}
     weapon_4: {fileID: 1667036337926388227}
   weakPoint: {fileID: 267173422}
-  P2HP: 1
-  maxP2HP: 1
+  P2HP: 100
+  maxP2HP: 100
   rotationSpeed: 0
 --- !u!136 &131955117
 CapsuleCollider:

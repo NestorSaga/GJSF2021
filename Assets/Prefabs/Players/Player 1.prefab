@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 7811303543528359068}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 7811303544089908018}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1227,6 +1227,8 @@ MonoBehaviour:
   attackRange: 1
   attackDuration: 0.2
   damage: 5
+  p1Prefab: {fileID: 0}
+  p2Prefab: {fileID: 0}
   P1HP: 50
   maxP1HP: 50
   animator: {fileID: 4993814126482238315}
