@@ -14,11 +14,10 @@ public class FlamePulse : Weapon
 
     public Vector3 originalFilling, originalToFill;
 
-    float speed = 0.5f;
+    bool playedPreOnce, playedPostOnce;
 
     void Start()
     {
-        Debug.Log("Soy un lanzapulsos!");
 
         foreach (Transform tr in GetComponentInChildren<Transform>())
         {
@@ -39,8 +38,7 @@ public class FlamePulse : Weapon
 
     public override void Fire()
     {
-        Debug.Log("Lanzo un pulso putita.");
-
+        playedPostOnce = false;
         if (pulseFilling.transform.localScale.x < maxRadius)
         {
 
@@ -56,6 +54,12 @@ public class FlamePulse : Weapon
 
             //pulseFilling.transform.localScale = Vector3.Lerp(pulseFilling.transform.localScale, targetScale, speed * Time.deltaTime);
 
+            if(!playedPreOnce)
+            {
+                SoundManager.Instance.PlaySound(SoundManager.Sound.player2PulsePre);
+                playedPreOnce = true;
+            }
+
         }
             
         else Release();
@@ -64,12 +68,19 @@ public class FlamePulse : Weapon
 
     public override void Release()
     {
-        Debug.Log("suelted");
         pulseFilling.GetComponent<SphereCollider>().enabled = true;
         //pulseFilling.transform.localScale = originalFilling;
-        radius = 0;
+        radius = 0;     
+        playedPreOnce = false;
 
         StartCoroutine(waitTime());
+
+        if (!playedPostOnce)
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.player2PulsePost);
+            playedPostOnce = true;
+        }
+
 
     }
 

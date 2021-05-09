@@ -18,7 +18,6 @@ public class RocketLauncher : Weapon
 
     void Start()
     {
-        Debug.Log("Soy un lanzacohetes!");
         rocket = rocketBase;
         damage = 5;
         l_duration = duration;
@@ -32,7 +31,6 @@ public class RocketLauncher : Weapon
 
     public override void Fire()
     {
-        Debug.Log("Lanzo cohetes putita.");
         l_duration -= Time.deltaTime;
         if (l_duration < 0)
         {

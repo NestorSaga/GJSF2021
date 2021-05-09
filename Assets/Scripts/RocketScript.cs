@@ -12,7 +12,7 @@ public class RocketScript : MonoBehaviour
     public Vector3 dir;
     void Start()
     {
-        
+        SoundManager.Instance.PlaySound(SoundManager.Sound.player2RocketFlying);
     }
 
     // Update is called once per frame
@@ -24,6 +24,15 @@ public class RocketScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Pared")
+        {
+            Debug.Log("Bengalas de luz y de color");
+
+            Destroy(this.gameObject);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Pared")
         {
             Debug.Log("Bengalas de luz y de color");
 

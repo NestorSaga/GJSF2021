@@ -8,17 +8,24 @@ public class SoundManager : MonoBehaviour
     public enum Sound
     {
         player1Attack,
-        player2Flamethrower,
-        player2Rocket,
+        playerHurt,
+        player2Flamethrower1,
+        player2Flamethrower2,
+        player2RocketFlying,
+        player2RocketExplode,
         player2PulsePre,
         player2PulsePost,
+        diablilloSound,
     }
 
     public static SoundManager Instance;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(this);
+
+        
     }
 
 
@@ -30,14 +37,21 @@ public class SoundManager : MonoBehaviour
     }
     public SoundAudioClip[] sounds;
 
+    
+
+
     //private static Dictionary<Sound, float> sountTimerDictionary;
 
     public void PlaySound(Sound sound)
     {
         GameObject soundGO = new GameObject("Sound");
         AudioSource audioSource = soundGO.AddComponent<AudioSource>();
-        audioSource.PlayOneShot(GetAudioClip(sound));
-        audioSource.volume = 0.5f;
+        audioSource.clip = GetAudioClip(sound);
+        audioSource.Play();
+        audioSource.volume = 1f;
+
+        Object.Destroy(soundGO, audioSource.clip.length);
+
     }
 
     private AudioClip GetAudioClip(Sound sound)

@@ -71,7 +71,6 @@ public class Player_2_Controller : MonoBehaviour
         }
         else if (weapon_2Cancelled) Release_Weapon_2();
 
-
         if (weapon_3)
         {
             Attack_Weapon_3();
@@ -81,9 +80,6 @@ public class Player_2_Controller : MonoBehaviour
         {
             Attack_Weapon_4();
         }
-
-        
-
 
         // Reseteamos bools de input
         rotateClockwise = false;

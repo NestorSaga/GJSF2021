@@ -14,9 +14,10 @@ public class Flamethrower : Weapon
 
 
     public bool instantiated;
+    bool playedOnce;
     void Start()
     {
-        Debug.Log("Soy un lanzallamas!");
+
     }
 
 
@@ -27,7 +28,6 @@ public class Flamethrower : Weapon
 
     public override void Fire()
     {
-        Debug.Log("Lanzo llamas putita.");
 
             foreach (Transform tr in flameSpawns)
             {
@@ -37,6 +37,13 @@ public class Flamethrower : Weapon
                     tr.gameObject.GetComponent<ParticleSystem>().Play();
 
             }
+
+        if (!playedOnce)
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.player2Flamethrower1);
+            SoundManager.Instance.PlaySound(SoundManager.Sound.player2Flamethrower2);
+            playedOnce = true;
+        }
         
     }
 
@@ -49,6 +56,8 @@ public class Flamethrower : Weapon
             tr.gameObject.GetComponent<ParticleSystem>().Stop();
             
         }
+        playedOnce = false;
+        SoundManager.Instance.audioSource.Stop();
     }
 
 }
