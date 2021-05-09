@@ -817,6 +817,7 @@ GameObject:
   - component: {fileID: 331256651}
   - component: {fileID: 331256650}
   - component: {fileID: 331256652}
+  - component: {fileID: 331256653}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -870,6 +871,19 @@ MonoBehaviour:
   effects:
   - name: Explosion
     effect: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+--- !u!114 &331256653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331256649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f24b969c35bd5543860e51a0526c633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: []
 --- !u!1 &397384383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,10 +2596,6 @@ PrefabInstance:
     - target: {fileID: 1667036339601969935, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1667036339762502428, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
-      propertyPath: increaseRate
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
@@ -10974,30 +10984,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4271690054524010624, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 4271690054524010624, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 4271690054524010624, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294868005841980233, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8018868
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294868005841980233, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8018868
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294868005841980233, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8018868
-      objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908012, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.08
@@ -11042,18 +11028,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7811303544089908013, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908016, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7811303544089908018, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
-      propertyPath: gm
-      value: 
-      objectReference: {fileID: 331256650}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
 --- !u!4 &3781027058228672522

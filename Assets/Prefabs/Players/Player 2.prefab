@@ -15396,7 +15396,7 @@ MonoBehaviour:
   pulseFilling: {fileID: 2044071168393090998}
   maxRadius: 4
   radius: 0
-  increaseRate: 0.5
+  increaseRate: 1
   originalFilling: {x: 0, y: 0, z: 0}
   originalToFill: {x: 0, y: 0, z: 0}
 --- !u!1 &2044071168393090998
