@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
             int offTargetPlus = limites.Count - random + 2;
             int offTargetMinus = limites.Count - random - 2;
-            if (limites.Count - random + 2 > 19) offTargetPlus = 19;
+            if (limites.Count - random + 2 > limites.Count-1) offTargetPlus = limites.Count;
             else if (limites.Count - random - 2 < 0) offTargetMinus = 0;
 
             //Spawn minions
