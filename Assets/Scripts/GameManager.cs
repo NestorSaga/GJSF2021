@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -86,12 +88,28 @@ public class GameManager : MonoBehaviour
     public void win()
     {
         Debug.Log("WIN");
+        UIManager.Instance.EndScreen(true);
+        p1.GetComponent<PlayerInput>().enabled = false;
+        p2.GetComponent<PlayerInput>().enabled = false;
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            Application.Quit(0);
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            SceneManager.LoadScene(0);
     }
 
     public void lose()
     {
         Debug.Log("LOSE");
+        UIManager.Instance.EndScreen(false);
+        p1.GetComponent<PlayerInput>().enabled = false;
+        p2.GetComponent<PlayerInput>().enabled = false;
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            Application.Quit(0);
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            SceneManager.LoadScene(0);
     }
-
-
 }

@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
         bossSlider.fillAmount = p2.P2HP/p2.maxP2HP;
     }
 
-    void EndScreen(bool poblewins)
+    public void EndScreen(bool poblewins)
     {
         gameUI.SetActive(false);
 
