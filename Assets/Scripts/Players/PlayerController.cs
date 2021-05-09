@@ -25,12 +25,17 @@ public class PlayerController : MonoBehaviour
 
     // Gestión de inputs
     Vector3 playerInput;
-    bool jumpInput, attackInput;
+    bool jumpInput, attackInput, flip;
 
     // Valores
     public float P1HP, maxP1HP;
 
     // Referencias
+
+
+
+    public Animator animator;
+    public SoundManager sm;
 
 
     public void OnMove(InputAction.CallbackContext ctx) => playerInput = new Vector3(ctx.ReadValue<Vector2>().x, 0 , ctx.ReadValue<Vector2>().y);
@@ -42,18 +47,26 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         P1HP = maxP1HP;
-
     }
 
     private void Update()
     {
+        // Flip player model
+        if (playerInput.x > 0.1f)
+            animator.transform.localScale = new Vector3(0.5f, animator.transform.localScale.y, animator.transform.localScale.z);
 
+        else if (playerInput.x < -0.1f) 
+            animator.transform.localScale = new Vector3(-0.5f, animator.transform.localScale.y, animator.transform.localScale.z);
+
+        // Update Animator
+        animator.SetFloat("Speed", playerInput.magnitude);
+        animator.SetBool("Grounded", isGrounded);
+        animator.SetBool("AttackInput", attackInput);
     }
 
     void FixedUpdate()
     {
         //Direction
-
         if (playerInput.x < 0) direction = Direction.LEFT;
         else if (playerInput.x > 0) direction = Direction.RIGHT;
         else if (playerInput.z < 0) direction = Direction.DOWN;
