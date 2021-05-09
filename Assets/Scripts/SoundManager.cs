@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
         player2PulsePre,
         player2PulsePost,
         diablilloSound,
+        BGM,
     }
 
     public static SoundManager Instance;

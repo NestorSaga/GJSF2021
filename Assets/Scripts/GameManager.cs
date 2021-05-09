@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
 
     float nextActionTime = 0.0f;
-    float period = 2f;
+    float period = 4f;
 
     float offset = 0.5f;
 
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         limites = new List<Transform>();
         llenarLista();
         startGame = false;
+        transform.GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame
