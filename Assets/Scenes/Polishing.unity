@@ -413,7 +413,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &132017031
 MeshRenderer:
@@ -816,6 +816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 331256651}
   - component: {fileID: 331256650}
+  - component: {fileID: 331256652}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -854,6 +855,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331256652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331256649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f5d156c25b6d144bbce712ad216866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - name: Explosion
+    effect: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
 --- !u!1 &397384383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1128,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &489674873
 MeshRenderer:
@@ -1224,7 +1240,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &525280520
 MeshRenderer:
@@ -1732,7 +1748,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &728236659
 MeshRenderer:
@@ -2196,7 +2212,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &857867348
 MeshRenderer:
@@ -2529,7 +2545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667036339601969935, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 1667036339601969935, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2566,6 +2582,10 @@ PrefabInstance:
     - target: {fileID: 1667036339601969935, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667036339762502428, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
+      propertyPath: increaseRate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
@@ -2614,7 +2634,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &945551135
 MeshRenderer:
@@ -2876,7 +2896,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &999270617
 MeshRenderer:
@@ -3341,7 +3361,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1186405476
 MeshRenderer:
@@ -3453,7 +3473,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1193544029
 MeshRenderer:
@@ -3565,7 +3585,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1217678725
 MeshRenderer:
@@ -4213,7 +4233,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1429818231
 MeshRenderer:
@@ -4325,7 +4345,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1454982563
 MeshRenderer:
@@ -4703,7 +4723,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1644214989
 MeshRenderer:
@@ -5102,7 +5122,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1780910287
 MeshRenderer:
@@ -5200,7 +5220,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1790699049
 MeshRenderer:
@@ -5489,7 +5509,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1902804672
 MeshRenderer:
@@ -5751,7 +5771,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1975698626
 MeshRenderer:
@@ -5877,7 +5897,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5.57, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1997443882
 MeshRenderer:
@@ -10954,6 +10974,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4271690054524010624, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271690054524010624, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271690054524010624, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294868005841980233, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294868005841980233, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294868005841980233, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8018868
+      objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908012, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.08
@@ -10997,6 +11041,10 @@ PrefabInstance:
     - target: {fileID: 7811303544089908012, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811303544089908013, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908016, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_Name

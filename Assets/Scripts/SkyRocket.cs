@@ -23,6 +23,7 @@ public class SkyRocket : MonoBehaviour
 
             if (transform.position.y <= 0)
             {
+                EffectsManager.Instance.InstantiateEffect("Explosion", transform.position);
                 Destroy(gameObject);
             }
         }
