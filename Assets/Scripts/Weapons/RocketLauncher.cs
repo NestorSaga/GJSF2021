@@ -38,7 +38,7 @@ public class RocketLauncher : Weapon
         {
             foreach (Transform tr in rocketSpawns)
             {
-                rocket = Instantiate(rocket, tr.transform.position, tr.transform.rotation);
+                rocket = Instantiate(rocket, tr.transform.position,Quaternion.LookRotation(tr.transform.position - anchorPoint.transform.position));
                 rocket.GetComponent<RocketScript>().dir = tr.transform.position - anchorPoint.transform.position;
                 l_duration = duration;
             }

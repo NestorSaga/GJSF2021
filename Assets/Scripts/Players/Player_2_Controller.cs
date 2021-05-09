@@ -15,6 +15,10 @@ public class Player_2_Controller : MonoBehaviour
     }
     public Weapons weapons = new Weapons();
 
+    //Referencias
+
+    public Transform weakPoint;
+
     // Valores
 
     public float P2HP, maxP2HP;
@@ -50,6 +54,7 @@ public class Player_2_Controller : MonoBehaviour
     void Start()
     {
         P2HP = maxP2HP;
+        //Die();
     }
 
     void Update()
@@ -77,7 +82,7 @@ public class Player_2_Controller : MonoBehaviour
             Attack_Weapon_4();
         }
 
-        Debug.Log("" + weapon_1);
+        
 
 
         // Reseteamos bools de input
@@ -139,11 +144,25 @@ public class Player_2_Controller : MonoBehaviour
     public void TakeDamage(float quantity)
     {
         P2HP -= quantity;
-
+        if (P2HP <= 0) GameManager.Instance.win();
     }
 
     public void Die()
     {
+        foreach(Transform child in transform)
+        {
+            if(child.name == "Garsa")
+            {
+                foreach(Transform garsaChild in child) {
+                    garsaChild.GetComponent<Rigidbody>().isKinematic = false;
+                    garsaChild.GetComponent<Rigidbody>().AddExplosionForce(3000, garsaChild.position, 5f);
+
+                    garsaChild.GetComponent<MeshCollider>().enabled = true;
+
+
+                }
+            }
+        }
 
     }
 }

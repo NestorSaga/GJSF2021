@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour
 
     float offset = 1.5f;
 
-
-   
-
     public PlayerController p1;
     public Player_2_Controller p2;
 
@@ -43,27 +40,28 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        //if (currentBossHP <= 0) win();
-        //else if (currentKnightHP <= 0) lose();
+        if (Time.time > nextActionTime)
+        {
+            //Minions objetive
+            nextActionTime += period;
+            int random = Random.Range(0, limites.Count);
+            Vector3 position = new Vector3(limites[random].position.x - offset * 2, offset, limites[random].position.z - offset * 2);
+            //Vector3 position = limites[random].forward +  new Vector3(0,offset,0);
+
+            int offTargetPlus = limites.Count - random + 2;
+            int offTargetMinus = limites.Count - random - 2;
+            if (limites.Count - random + 2 > 19) offTargetPlus = 19;
+            else if (limites.Count - random - 2 < 0) offTargetMinus = 0;
+
+            //Spawn minions
+            var d = Instantiate(diablillo, position, Quaternion.identity);
 
 
-
-            if (Time.time > nextActionTime)
-            {
-
-                //Minions objetive
-                nextActionTime += period;
-                int random = Random.Range(0, limites.Count);
-                Vector3 position = new Vector3(limites[random].position.x - offset * 2, offset, limites[random].position.z - offset * 2);
-                //Vector3 position = limites[random].forward +  new Vector3(0,offset,0);
-
-                //Spawn minions
-                diablillo = Instantiate(diablillo, position, Quaternion.identity);
-                if (period % 2 == 0)
-                    diablillo.GetComponent<DiablilloScript>().target = limites[limites.Count - random + 2];
-                else
-                    diablillo.GetComponent<DiablilloScript>().target = limites[limites.Count - random - 2];
-            }
+            if (period % 2 == 0)
+                d.GetComponent<DiablilloScript>().target = limites[offTargetPlus];
+            else
+                d.GetComponent<DiablilloScript>().target = limites[offTargetMinus];
+        }
     }
 
     void llenarLista()
@@ -75,18 +73,14 @@ public class GameManager : MonoBehaviour
     }
 
 
-
-
-
-
     public void win()
     {
-
+        Debug.Log("WIN");
     }
 
     public void lose()
     {
-
+        Debug.Log("LOSE");
     }
 
 
