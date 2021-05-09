@@ -6,7 +6,8 @@ public class EffectsManager : MonoBehaviour
 {
     public static EffectsManager Instance;
 
-    public struct Effect
+    [System.Serializable]
+    public class Effect
     {
         public string name;
         public GameObject effect;

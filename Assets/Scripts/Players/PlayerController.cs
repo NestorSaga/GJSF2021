@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
 
     // Referencias
 
-    public SoundManager sm;
 
     public void OnMove(InputAction.CallbackContext ctx) => playerInput = new Vector3(ctx.ReadValue<Vector2>().x, 0 , ctx.ReadValue<Vector2>().y);
     public void OnJump(InputAction.CallbackContext ctx) => jumpInput = ctx.ReadValueAsButton();
@@ -107,7 +106,6 @@ public class PlayerController : MonoBehaviour
         }
 
         hitbox.SetActive(true);
-        sm.PlaySound(SoundManager.Sound.player1Attack);
 
 
         while (duration > 0)
