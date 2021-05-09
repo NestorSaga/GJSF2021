@@ -158,8 +158,7 @@ public class Player_2_Controller : MonoBehaviour
         P2HP -= quantity;
         if (P2HP <= 0)
         {
-            Die();
-            GameManager.Instance.win();
+            Die();     
         }
 
     }
@@ -178,11 +177,13 @@ public class Player_2_Controller : MonoBehaviour
                         garsaChild.GetComponent<Rigidbody>().isKinematic = false;
                         garsaChild.GetComponent<Rigidbody>().AddExplosionForce(3000, garsaChild.position, 5f);
 
-                        garsaChild.GetComponent<MeshCollider>().enabled = true;
+                        if(garsaChild.GetComponent<MeshCollider>())
+                            garsaChild.GetComponent<MeshCollider>().enabled = true;
                     }
                 }
             }
         }
 
+        GameManager.Instance.win();
     }
 }

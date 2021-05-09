@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject infoUI;
     public GameObject gameUI;
+    public GameObject garsaName;
+    public GameObject dracName;
     public GameObject pobleWins;
     public GameObject dimoniWins;
 
@@ -45,5 +47,11 @@ public class UIManager : MonoBehaviour
             pobleWins.SetActive(true);
         
         else dimoniWins.SetActive(true);       
+    }
+
+    public void ChangeName()
+    {
+        garsaName.SetActive(false);
+        dracName.SetActive(true);
     }
 }

@@ -1046,7 +1046,6 @@ GameObject:
   - component: {fileID: 331256653}
   - component: {fileID: 331256654}
   - component: {fileID: 331256655}
-  - component: {fileID: 331256656}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1247,36 +1246,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &331256656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331256649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &354303925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3172,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1667036339601969928, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
+      propertyPath: P2HP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667036339601969928, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
+      propertyPath: maxP2HP
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1667036339601969929, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
       propertyPath: m_Name
       value: Player 2
@@ -3251,45 +3228,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2756063496145617818, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2756063496145617818, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2756063496145617818, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3275332479344318752, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
---- !u!1 &937274792 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3275332479344318752, guid: 0c5044ac422d75c4f97789e4434f397b, type: 3}
-  m_PrefabInstance: {fileID: 937274791}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &937274793
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937274792}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 6abe60b6706894b4aac5e1c19aa75cfd, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 6abe60b6706894b4aac5e1c19aa75cfd, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &945551132
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +4915,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoUI: {fileID: 418506854}
   gameUI: {fileID: 275524947}
+  garsaName: {fileID: 1739050083}
+  dracName: {fileID: 354303925}
   pobleWins: {fileID: 160913187}
   dimoniWins: {fileID: 1590541098}
   knightSlider: {fileID: 999438106}

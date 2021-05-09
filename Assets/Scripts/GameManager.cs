@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public PlayerController p1;
     public Player_2_Controller p2;
 
-    bool startGame, wonOnce;
+    bool startGame, wonOnce, gameOver;
 
     private void Awake()
     {
@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
         limites = new List<Transform>();
         llenarLista();
         startGame = false;
+        gameOver = false;
+        wonOnce = false;
         transform.GetComponent<AudioSource>().Play();
     }
 
@@ -67,7 +69,16 @@ public class GameManager : MonoBehaviour
                 else
                     d.GetComponent<DiablilloScript>().target = limites[offTargetMinus];
             }
-        }   
+        }
+
+        if (gameOver)
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+                Application.Quit(0);
+
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+                SceneManager.LoadScene(0);
+        }
     }
 
     void llenarLista()
@@ -87,7 +98,6 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
-
         if (wonOnce)
         {
             Debug.Log("WIN");
@@ -95,19 +105,20 @@ public class GameManager : MonoBehaviour
             p1.GetComponent<PlayerInput>().enabled = false;
             p2.GetComponent<PlayerInput>().enabled = false;
 
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-                Application.Quit(0);
-
-            if (Keyboard.current.escapeKey.wasPressedThisFrame)
-                SceneManager.LoadScene(0);
+            gameOver = true;
         }
+
         else
         {
+            Debug.Log("????????????????");
+
             p2.P2HP = p2.maxP2HP;
             wonOnce = true;
-        }
 
-        
+            p2.transform.Find("Drac").gameObject.SetActive(true);
+            p2.transform.Find("Model").name = "Dead Garsa DEP";
+            p2.transform.Find("Drac").name = "Model";
+        }
     }
 
     public void lose()
@@ -117,10 +128,6 @@ public class GameManager : MonoBehaviour
         p1.GetComponent<PlayerInput>().enabled = false;
         p2.GetComponent<PlayerInput>().enabled = false;
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            Application.Quit(0);
-
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-            SceneManager.LoadScene(0);
+        gameOver = true;
     }
 }
