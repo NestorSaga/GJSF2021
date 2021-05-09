@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     float nextActionTime = 0.0f;
     float period = 2f;
 
-    float offset = 1.5f;
+    float offset = 0.5f;
 
     public PlayerController p1;
     public Player_2_Controller p2;
