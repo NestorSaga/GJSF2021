@@ -1460,6 +1460,68 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &1031940228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031940230}
+  - component: {fileID: 1031940229}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1031940229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031940228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f24b969c35bd5543860e51a0526c633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - sound: 0
+    audioClip: {fileID: 0}
+  - sound: 1
+    audioClip: {fileID: 0}
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: 1a5f6b0f2beb2284486b6f0126783c90, type: 3}
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: 15d949b428eee614087b16d126c3dc5a, type: 3}
+  - sound: 4
+    audioClip: {fileID: 8300000, guid: 5dc9ab5c0f5a6cc4e96c9f2a7c07f05b, type: 3}
+  - sound: 5
+    audioClip: {fileID: 0}
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: 93c53c90295b4bc43acb763d9e22dbe6, type: 3}
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: f33688acba7fa624fb668017c22cc7f6, type: 3}
+  - sound: 8
+    audioClip: {fileID: 0}
+--- !u!4 &1031940230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031940228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.125361, y: -28.484722, z: 76.85329}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186405473
 GameObject:
   m_ObjectHideFlags: 0
