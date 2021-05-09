@@ -15,10 +15,6 @@ public class Player_2_Controller : MonoBehaviour
     }
     public Weapons weapons = new Weapons();
 
-    //Referencias
-
-    GameManager gm;
-
     // Valores
 
     public float P2HP, maxP2HP;

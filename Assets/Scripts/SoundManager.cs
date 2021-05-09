@@ -14,6 +14,13 @@ public class SoundManager : MonoBehaviour
         player2PulsePost,
     }
 
+    public static SoundManager Instance;
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+    }
+
 
     [System.Serializable]
     public class SoundAudioClip
@@ -30,6 +37,7 @@ public class SoundManager : MonoBehaviour
         GameObject soundGO = new GameObject("Sound");
         AudioSource audioSource = soundGO.AddComponent<AudioSource>();
         audioSource.PlayOneShot(GetAudioClip(sound));
+        audioSource.volume = 0.5f;
     }
 
     private AudioClip GetAudioClip(Sound sound)
