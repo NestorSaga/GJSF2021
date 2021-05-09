@@ -235,6 +235,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &256245456 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4993814126482238315, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+  m_PrefabInstance: {fileID: 3682484396922850380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &331256649
 GameObject:
   m_ObjectHideFlags: 0
@@ -8137,6 +8142,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7611044542106621815, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611044542106621815, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611044542106621815, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7811303544089908012, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.08
@@ -8185,6 +8202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7811303544089908018, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 256245456}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b0e3f38022f234fa8ca60f8e022e0c, type: 3}
 --- !u!1001 &8432754930980320835
